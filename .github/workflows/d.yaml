@@ -14,7 +14,7 @@ jobs:
         run: |
               echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
               ssh -o StrictHostKeyChecking=no -i private_key ubuntu@${{ secrets.F_HOSTNAME }} '
-                cd /Face-Detector &&
+                cd Face-Detector &&
                 sudo git checkout main &&
                 sudo git pull origin main '
    
