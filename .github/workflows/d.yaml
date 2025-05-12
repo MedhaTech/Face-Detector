@@ -1,0 +1,22 @@
+name : Deploy
+on :
+  push :
+      branches: main
+jobs: 
+  Deploy: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Main
+        if: github.ref == 'refs/heads/main'
+        env:
+              PRIVATE_KEY: ${{ secrets.F_PRIVATE_KEY }}
+              HOSTNAME: ${{ secrets.F_HOSTNAME }}
+        run: |
+              echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
+              ssh -o StrictHostKeyChecking=no -i private_key ubuntu@${{ secrets.F_HOSTNAME }} '
+                cd Face-Detector &&
+                sudo git checkout main &&
+                sudo git pull origin main '
+   
+  
+  
